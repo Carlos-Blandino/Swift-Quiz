@@ -16,14 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
    
     var correctAnswer = ""
-    var quiz = [
+    let quizTemplate = [
         ["Four + Two is equal to Six","True"],
         ["Five - Three is greater than One","True"],
         ["Three + Eight is less than Ten", "False"]
     ]
+    var quiz: [[String]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        resetQuiz()
         //at start up I needed to set the progressbar to starting position
         progressBar.progress = 0
         //I need the first random question to appear
@@ -57,12 +58,16 @@ class ViewController: UIViewController {
         }
     }
     
+    func resetQuiz(){
+        quiz = quizTemplate
+    }
     func updateQuestion() {
         //since the quiz is being reduce by the current
         //question we need to first check for an empty
         //array
         if quiz.isEmpty {
-            questionLabel.text = "Quiz is done"
+            //questionLabel.text = "Quiz is done"
+            resetQuiz()
         //we randomly select the next question if the
         //array is not empty and assign its answer to the
         //temp global variable correctAnswer
@@ -77,10 +82,6 @@ class ViewController: UIViewController {
             quiz.remove(at: index!)
             
         }
-        
-        
-        
-        
     }
     
 }
