@@ -16,15 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
    
     var correctAnswer = ""
-    let quizTemplate = [
-        ["Four + Two is equal to Six","True"],
-        ["Five - Three is greater than One","True"],
-        ["Three + Eight is less than Ten", "False"]
-    ]
-    var quiz: [[String]] = []
+    
+    var quiz = Question()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetQuiz()
+        addQuestions()
         //at start up I needed to set the progressbar to starting position
         progressBar.progress = 0
         //I need the first random question to appear
@@ -42,6 +39,12 @@ class ViewController: UIViewController {
         updateQuestion()
     }
     
+    func addQuestions() {
+        quiz.addQuestion(question: "Four + Two is equal to Six", ans: "True")
+        quiz.addQuestion(question: "Five - Three is greater than One", ans: "True")
+        quiz.addQuestion(question: "Three + Eight is less than Ten", ans: "False")
+    }
+    
     func checkAnswer(currentTitle: String) {
         
         //this is buttonPressed helper function
@@ -57,30 +60,26 @@ class ViewController: UIViewController {
             print("Wrong")
         }
     }
-    
-    func resetQuiz(){
-        quiz = quizTemplate
-    }
+
     func updateQuestion() {
         //since the quiz is being reduce by the current
         //question we need to first check for an empty
         //array
-        if quiz.isEmpty {
-            //questionLabel.text = "Quiz is done"
-            resetQuiz()
+        
+        if quiz.questions.isEmpty {
+    
+        viewDidLoad()
         //we randomly select the next question if the
         //array is not empty and assign its answer to the
         //temp global variable correctAnswer
         //and afterwards remove element form the array
         //so we don't get a duplicate or predictable question
         } else {
-            let strElementArray = quiz.randomElement()
-            let index = quiz.firstIndex(of: strElementArray!)
-            
-            questionLabel.text = quiz[index!][0]
-            correctAnswer = quiz[index!][1]
-            quiz.remove(at: index!)
-            
+            let strElementKey = quiz.questions.randomElement()
+            let index = strElementKey!.key
+            questionLabel.text = index
+            correctAnswer = strElementKey?.value ?? ""
+            quiz.questions.remove(at: quiz.questions.index(forKey: index)!)
         }
     }
     

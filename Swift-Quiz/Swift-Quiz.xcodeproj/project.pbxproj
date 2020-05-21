@@ -13,6 +13,7 @@
 		07D0CE6B247481AC000BD40C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D0CE69247481AC000BD40C /* Main.storyboard */; };
 		07D0CE6D247481B1000BD40C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D0CE6C247481B1000BD40C /* Assets.xcassets */; };
 		07D0CE70247481B1000BD40C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D0CE6E247481B1000BD40C /* LaunchScreen.storyboard */; };
+		07D0CE782476059C000BD40C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0CE772476059C000BD40C /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		07D0CE6C247481B1000BD40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07D0CE6F247481B1000BD40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07D0CE71247481B1000BD40C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07D0CE772476059C000BD40C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				07D0CE6C247481B1000BD40C /* Assets.xcassets */,
 				07D0CE6E247481B1000BD40C /* LaunchScreen.storyboard */,
 				07D0CE71247481B1000BD40C /* Info.plist */,
+				07D0CE772476059C000BD40C /* Question.swift */,
 			);
 			path = "Swift-Quiz";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D0CE68247481AC000BD40C /* ViewController.swift in Sources */,
+				07D0CE782476059C000BD40C /* Question.swift in Sources */,
 				07D0CE64247481AC000BD40C /* AppDelegate.swift in Sources */,
 				07D0CE66247481AC000BD40C /* SceneDelegate.swift in Sources */,
 			);
