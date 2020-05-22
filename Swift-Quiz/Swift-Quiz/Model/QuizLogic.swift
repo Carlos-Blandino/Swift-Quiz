@@ -11,18 +11,22 @@ import UIKit
 
 struct QuizLogic {
     var totalResponses = 0
-    var totalNumberOfQuestion = 0
     var correctAnswer = ""
     var questions = [Question]()
+    //termporary data structure
     let allQuestions = [
         Question(question: "Four + Two is equal to Six", answer:"True"),
         Question(question: "Five - Three is greater than One", answer: "True"),
         Question(question: "Three + Eight is less than Ten", answer: "False")
     ]
-    
+/*
+     current title of the buttons true or false which is acutally current answer
+    need to check the answer from button against stored answer and return it
+    true to false return is used in answer button pressed for view response
+ */
     mutating func checkAnswer(currentTitle: String) -> Bool {
         
- 
+    //totalResponses is used in calculating progrogress bar progression
         totalResponses += 1
         
         var totalCorrectAnswers = 0
@@ -42,9 +46,13 @@ struct QuizLogic {
         }
         
     }
-    
-    
+/*
+    helper function that access a random question and removes it
+    from the array to avoid reselcting it , also needs to update
+    all required variable to reflect question and answer
+ */
     mutating func getRandom() -> String {
+        
         var strElementKey = Question()
         
         var questionResult = ""
@@ -61,14 +69,19 @@ struct QuizLogic {
         
         return questionResult
     }
-    
+
+/*
+     need to get the question for the view to show
+     so a string return in required, the question
+     is at random, aslong as its not empty otherwise
+     question bank needs to get reset
+     
+*/
     
     
     mutating func getQuestion() -> String {
         
-        totalNumberOfQuestion = allQuestions.count
-
-
+   
         if questions.isEmpty {
             
             totalResponses = 0
