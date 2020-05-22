@@ -6,7 +6,6 @@
 //  Copyright © 2020 Carlos Blandino. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct QuizLogic {
@@ -15,9 +14,14 @@ struct QuizLogic {
     var questions = [Question]()
     //termporary data structure
     let allQuestions = [
-        Question(question: "Four + Two is equal to Six", answer:"True"),
-        Question(question: "Five - Three is greater than One", answer: "True"),
-        Question(question: "Three + Eight is less than Ten", answer: "False")
+        Question(question: "Does @objc work with #selector()?", answer:"True"),
+        Question(question: "Does .isEmpty need parenthesis?", answer: "False"),
+        Question(question: "A button has a .layer property?", answer: "True"),
+        Question(question: "The .layer property has a .cornerRadius?", answer: "True"),
+        Question(question: "Is .scheduledTimer part of Timer class?", answer: "True"),
+        Question(question: "The UIProgressView is necessary to create a progress bar", answer: "True"),
+        
+        
     ]
 /*
      current title of the buttons true or false which is acutally current answer
