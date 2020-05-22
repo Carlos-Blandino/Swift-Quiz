@@ -73,7 +73,12 @@ struct QuizLogic {
         
         return questionResult
     }
-
+    
+    //calculation to for the progress bar, need to manipulate quizlogic data
+    func getProgress() -> Float {
+        
+        return Float(totalResponses) / Float(allQuestions.count)
+    }
 /*
      need to get the question for the view to show
      so a string return in required, the question
@@ -81,8 +86,6 @@ struct QuizLogic {
      question bank needs to get reset
      
 */
-    
-    
     mutating func getQuestion() -> String {
         
    

@@ -49,18 +49,14 @@ class ViewController: UIViewController {
         //and update the progress
         if ans {
             sender.backgroundColor = .systemGreen
-            Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateButton), userInfo: nil, repeats: false)
-            updateProgressBar()
-            updateQuestion()
-            
+
         } else {
             sender.backgroundColor = .systemRed
-            Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateButton), userInfo: nil, repeats: false)
-            updateProgressBar()
-            updateQuestion()
-            
+
         }
-        
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateButton), userInfo: nil, repeats: false)
+        updateProgressBar()
+        updateQuestion()
     }
     //view needs to update the button
     //helper function that is called upon after the scheduledTimer in answerButtonPressed func is done
@@ -72,7 +68,7 @@ class ViewController: UIViewController {
     func updateProgressBar() {
         //the progress bar uses a 0 to 1 scale to adjust the progress, basically a percentage as a
         //result of a fraction
-        progressBar.progress = Float(quizBrain.totalResponses) / Float(quizBrain.allQuestions.count)
+        progressBar.progress = quizBrain.getProgress()
         
     }
     //view needs to update the question label
