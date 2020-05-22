@@ -8,11 +8,8 @@
 
 import Foundation
 struct Question {
-    var totalResponses = 0
-    var questions = [String: String]()
-    var totalNumberOfQuestion = 0
-    var correctAnswer = ""
-    mutating func addQuestion(question: String, ans: String) {
-        questions[question] = ans
-    }
+    
+    var question = ""
+    var answer = ""
+    
 }
