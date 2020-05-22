@@ -31,9 +31,13 @@ struct QuizLogic {
         let actualAnswer = correctAnswer
         
         if userAnswer == actualAnswer {
+            
             totalCorrectAnswers += 1
+            
             return true
+            
         } else {
+            
             return false
         }
         
@@ -42,14 +46,19 @@ struct QuizLogic {
     
     mutating func getRandom() -> String {
         var strElementKey = Question()
+        
         var questionResult = ""
+        
         let randomIndex = Int.random(in: 0..<questions.count)
+        
         strElementKey = questions[randomIndex]
+        
         questionResult = strElementKey.question
         
         correctAnswer = strElementKey.answer
 
         questions.remove(at: randomIndex)
+        
         return questionResult
     }
     
@@ -63,13 +72,13 @@ struct QuizLogic {
         if questions.isEmpty {
             
             totalResponses = 0
+            
             questions = allQuestions
 
             return getRandom()
+            
         } else {
-
-            print(questions.count)
-          
+            
             return getRandom()
         }
         

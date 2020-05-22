@@ -39,21 +39,19 @@ class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        
-        
         var ans = quizBrain.checkAnswer(currentTitle: sender.currentTitle!)
+        
         if ans {
             sender.backgroundColor = .systemGreen
             Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateButton), userInfo: nil, repeats: false)
+            updateProgressBar()
             updateQuestion()
         } else {
-            
             sender.backgroundColor = .systemRed
             Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateButton), userInfo: nil, repeats: false)
+            updateProgressBar()
             updateQuestion()
         }
-        
-        updateProgressBar()
         
     }
     
@@ -69,6 +67,7 @@ class ViewController: UIViewController {
     func updateQuestion() {
         
         let updatedQuestion = quizBrain.getQuestion()
+        
         questionLabel.text = updatedQuestion
     }
     
